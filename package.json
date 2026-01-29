@@ -1,0 +1,30 @@
+{
+  "name": "keyleak",
+  "version": "0.1.0",
+  "description": "Smallest, fastest secrets detecting tool — zero false positives.",
+  "type": "module",
+  "main": "dist/index.js",
+  "bin": {
+    "keyleak": "dist/index.js"
+  },
+  "files": [
+    "dist/index.js",
+    "rules.json"
+  ],
+  "scripts": {
+    "build": "tsc",
+    "start": "node dist/index.js",
+    "test": "npm run build && node --test test/test.js",
+    "prepublishOnly": "npm run build"
+  },
+  "keywords": ["secrets", "detection", "security", "api-keys", "git"],
+  "author": "",
+  "license": "MIT",
+  "engines": {
+    "node": ">=18"
+  },
+  "devDependencies": {
+    "@types/node": "^20.10.0",
+    "typescript": "^5.3.0"
+  }
+}
