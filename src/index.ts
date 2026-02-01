@@ -129,7 +129,7 @@ function redact(s: string, show = 4): string {
 // --- CLI ---
 
 function printHelp(): void {
-  const help = `keyleak - smallest, fastest, most comprehensive secrets detecting tool
+  const help = `keyleak - smallest, fastest secrets detecting tool - zero false positives.
 
 Usage:
   keyleak <path>              Scan file or directory (required unless --stdin)

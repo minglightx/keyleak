@@ -1354,21 +1354,6 @@
     "regex": "jdbc:mysql(=| =|:| :)"
   },
   {
-    "id": "generic-1700",
-    "name": "Generic - 1700",
-    "regex": "BEGIN OPENSSH PRIVATE KEY"
-  },
-  {
-    "id": "generic-1701",
-    "name": "Generic - 1701",
-    "regex": "BEGIN PRIVATE KEY"
-  },
-  {
-    "id": "generic-1702",
-    "name": "Generic - 1702",
-    "regex": "BEGIN RSA PRIVATE KEY"
-  },
-  {
     "id": "generic-1703",
     "name": "Generic - 1703",
     "regex": "BEGIN DSA PRIVATE KEY"
@@ -1377,11 +1362,6 @@
     "id": "generic-1704",
     "name": "Generic - 1704",
     "regex": "BEGIN EC PRIVATE KEY"
-  },
-  {
-    "id": "generic-1705",
-    "name": "Generic - 1705",
-    "regex": "BEGIN PGP PRIVATE KEY BLOCK"
   },
   {
     "id": "generic-1710",
@@ -1687,11 +1667,6 @@
     "id": "github-oauth-access-token",
     "name": "Github OAuth Access Token",
     "regex": "gho_[0-9a-zA-Z]{36}"
-  },
-  {
-    "id": "github-personal-access-token",
-    "name": "Github Personal Access Token",
-    "regex": "ghp_[0-9a-zA-Z]{36}"
   },
   {
     "id": "github-refresh-token",
@@ -2581,11 +2556,6 @@
     "regex": "(?:owlbot).{0,40}\\b([a-z0-9]{40})\\b"
   },
   {
-    "id": "pgp-private-key-block",
-    "name": "PGP private key block",
-    "regex": "-----BEGIN PGP PRIVATE KEY BLOCK-----"
-  },
-  {
     "id": "pagerdutyapikey",
     "name": "Pagerdutyapikey",
     "regex": "(?:pagerduty).{0,40}\\b([a-z]{1}\\+[a-zA-Z]{9}\\-[a-z]{2}\\-[a-z0-9]{5})\\b"
@@ -2850,16 +2820,6 @@
     "regex": "(?:quickmetrics).{0,40}\\b([a-zA-Z0-9_-]{22})\\b"
   },
   {
-    "id": "rkcs8",
-    "name": "RKCS8",
-    "regex": "-----BEGIN PRIVATE KEY-----"
-  },
-  {
-    "id": "rsa-private-key",
-    "name": "RSA private key",
-    "regex": "-----BEGIN RSA PRIVATE KEY-----"
-  },
-  {
     "id": "rapidapi",
     "name": "Rapidapi",
     "regex": "(?:rapidapi).{0,40}\\b([A-Za-z0-9_-]{50})\\b"
@@ -2993,11 +2953,6 @@
     "id": "runrunit-2",
     "name": "Runrunit - 2",
     "regex": "(?:runrunit).{0,40}\\b([0-9A-Za-z]{18,20})\\b"
-  },
-  {
-    "id": "ssh",
-    "name": "SSH",
-    "regex": "-----BEGIN OPENSSH PRIVATE KEY-----"
   },
   {
     "id": "ssh-dsa-private-key",
@@ -3337,21 +3292,6 @@
     "regex": "(xox[pborsa]-[0-9]{12}-[0-9]{12}-[0-9]{12}-[a-z0-9]{32})"
   },
   {
-    "id": "slack-webhook",
-    "name": "Slack Webhook",
-    "regex": "https://hooks.slack.com/services/T[a-zA-Z0-9_]{8,10}/B[a-zA-Z0-9_]{8,12}/[a-zA-Z0-9_]{23,24}"
-  },
-  {
-    "id": "slack-access-token",
-    "name": "Slack access token",
-    "regex": "xoxb-[0-9A-Za-z\\-]{51}"
-  },
-  {
-    "id": "slackwebhook",
-    "name": "Slackwebhook",
-    "regex": "(https:\\/\\/hooks.slack.com\\/services\\/[A-Za-z0-9+\\/]{44,46})"
-  },
-  {
     "id": "smartsheets",
     "name": "Smartsheets",
     "regex": "(?:smartsheets).{0,40}\\b([a-zA-Z0-9]{37})\\b"
@@ -3497,16 +3437,6 @@
     "regex": "(?:streak).{0,40}\\b([0-9Aa-f]{32})\\b"
   },
   {
-    "id": "stripe",
-    "name": "Stripe",
-    "regex": "[rs]k_live_[a-zA-Z0-9]{20,30}"
-  },
-  {
-    "id": "stripe-api-key-1",
-    "name": "Stripe API Key - 1",
-    "regex": "sk_live_[0-9a-zA-Z]{24}"
-  },
-  {
     "id": "stripe-api-key-2",
     "name": "Stripe API key - 2",
     "regex": "stripe[sr]k_live_[0-9a-zA-Z]{24}"
@@ -3535,11 +3465,6 @@
     "id": "stripe-restricted-api-key",
     "name": "Stripe Restricted API Key",
     "regex": "rk_live_[0-9a-zA-Z]{24}"
-  },
-  {
-    "id": "stripe-secret-key",
-    "name": "Stripe Secret Key",
-    "regex": "sk_(?:live|test)_[0-9a-zA-Z]{24}"
   },
   {
     "id": "stripe-secret-live-key",
@@ -3665,11 +3590,6 @@
     "id": "telegram-secret",
     "name": "Telegram Secret",
     "regex": "d{5,}:A[0-9a-z_-]{34,34}"
-  },
-  {
-    "id": "telegrambottoken",
-    "name": "Telegrambottoken",
-    "regex": "(?:telegram).{0,40}\\b([0-9]{8,10}:[a-zA-Z0-9_-]{35})\\b"
   },
   {
     "id": "telnyx",
@@ -5303,16 +5223,6 @@
     ]
   },
   {
-    "id": "hashicorp-tf-password",
-    "name": "Identified a HashiCorp Terraform password field, risking unauthorized infrastructure configuration and security breaches.",
-    "regex": "[\\w.-]{0,50}?(?:administrator_login_password|password)(?:[ \\t\\w.-]{0,20})[\\s'\"]{0,3}(?:=|>|:{1,3}=|\\|\\||:|=>|\\?=|,)[\\x60'\"\\s=]{0,5}(\"[a-z0-9=_\\-]{8,20}\")(?:[\\x60'\"\\s;]|\\\\[nr]|$)",
-    "entropy": 2,
-    "keywords": [
-      "administrator_login_password",
-      "password"
-    ]
-  },
-  {
     "id": "heroku-api-key",
     "name": "Detected a Heroku API Key, potentially compromising cloud application deployments and operational security.",
     "regex": "[\\w.-]{0,50}?(?:heroku)(?:[ \\t\\w.-]{0,20})[\\s'\"]{0,3}(?:=|>|:{1,3}=|\\|\\||:|=>|\\?=|,)[\\x60'\"\\s=]{0,5}([0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12})(?:[\\x60'\"\\s;]|\\\\[nr]|$)",
@@ -5813,14 +5723,6 @@
     ]
   },
   {
-    "id": "private-key",
-    "name": "Identified a Private Key, which may compromise cryptographic security and sensitive data encryption.",
-    "regex": "-----BEGIN[ A-Z0-9_-]{0,100}PRIVATE KEY(?: BLOCK)?-----[\\s\\S-]{64,}?KEY(?: BLOCK)?-----",
-    "keywords": [
-      "-----begin"
-    ]
-  },
-  {
     "id": "privateai-api-token",
     "name": "Identified a PrivateAI Token, posing a risk of unauthorized access to AI services and data manipulation.",
     "regex": "[\\w.-]{0,50}?(?i:[\\w.-]{0,50}?(?:private[_-]?ai)(?:[ \\t\\w.-]{0,20})[\\s'\"]{0,3})(?:=|>|:{1,3}=|\\|\\||:|=>|\\?=|,)[\\x60'\"\\s=]{0,5}([a-z0-9]{32})(?:[\\x60'\"\\s;]|\\\\[nr]|$)",
@@ -5997,15 +5899,6 @@
     "entropy": 2,
     "keywords": [
       "xapp"
-    ]
-  },
-  {
-    "id": "slack-bot-token",
-    "name": "Identified a Slack Bot token, which may compromise bot integrations and communication channel security.",
-    "regex": "xoxb-[0-9]{10,13}-[0-9]{10,13}[a-zA-Z0-9-]*",
-    "entropy": 3,
-    "keywords": [
-      "xoxb"
     ]
   },
   {

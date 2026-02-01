@@ -1,13 +1,13 @@
 # keyleak
 
-**最小、最快、规则最全的密钥检测工具，零误报。**
+**最小、最快的密钥检测工具，零误报。**
 
 - **核心**：极简体积，零运行时依赖，两文件设计（一代码一规则）。TypeScript。
 - **速度**：规则预编译，默认排除 node_modules 等编译目录，可选按大小/文件名/后缀过滤。
 - **覆盖**：1000+ 条特征，100+ 种密钥类型（AWS、GitHub、OpenAI、Stripe、DB URL、PII 等）。
 - **精准**：关键词预过滤、熵阈值、行内 `keyleak:ignore`；可用 `--disable` 按 id 关闭规则。
 
-**运行**：`npx keyleak` · **输入**：stdin、文件或目录 · **输出**：text（默认）、JSON、CSV
+**运行**：`npx keyleak` · **输入**：stdin、文件或目录 · **输出**：text、JSON、CSV
 
 ## 快速开始
 
@@ -32,13 +32,48 @@ npx keyleak ./src
 
 位置参数：要扫描的文件或目录路径。未提供且未使用 `--stdin` 时不扫描。
 
-## 集成示例
+## 使用场景
 
-- **Git diff**：`git diff | npx keyleak --stdin`
-- **提交前**：`npx keyleak . --fail`
-- **CI（如 GitHub Actions）**：`npx keyleak . --fail --format json`
-- **Docker**：挂载仓库后执行 `npx keyleak /path`
-- **发送给 AI 前**：内容经 `npx keyleak --stdin` 再发给 Copilot/Claude/Gemini
+**Pre-commit**（`.git/hooks/pre-commit`）：`npx keyleak . --fail || exit 1`
+
+**GitHub Actions**（`.github/workflows/keyleak.yml`）：
+
+```yaml
+on: [push, pull_request]
+jobs:
+  scan:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - run: npx keyleak . --fail
+```
+
+**Cursor**（`.cursor/hooks.json`）— [Hooks](https://cursor.com/docs/agent/hooks)：
+
+```json
+{
+  "version": 1,
+  "hooks": {
+    "beforeSubmitPrompt": [
+      { "command": "npx keyleak --stdin --fail && echo '{\"continue\":true}' || echo '{\"continue\":false,\"user_message\":\"Possible secrets detected.\"}'" }
+    ]
+  }
+}
+```
+
+**Claude Code**（`.claude/settings.json`）— [Hooks](https://code.claude.com/docs/en/hooks)（退出码 2 = 拦截）：
+
+```json
+{
+  "hooks": {
+    "UserPromptSubmit": [
+      { "hooks": [{ "type": "command", "command": "npx keyleak --stdin --fail || exit 2" }] }
+    ]
+  }
+}
+```
+
+**Git Diff**：`git diff | npx keyleak --stdin` 
 
 ## 行内忽略
 
