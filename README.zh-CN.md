@@ -73,7 +73,11 @@ jobs:
 }
 ```
 
-**Git Diff**：`git diff | npx keyleak --stdin` 
+**Git Diff**：`git diff | npx keyleak --stdin`
+
+**Git 历史扫描**：
+- 全量历史：`git log -p | npx keyleak --stdin`
+- 仅最新 N 条（如 100）：`git log -p -n 100 | npx keyleak --stdin`
 
 ## 行内忽略
 

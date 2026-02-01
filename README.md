@@ -75,6 +75,10 @@ jobs:
 
 **Git Diff**: `git diff | npx keyleak --stdin`
 
+**Git history scan**:
+- Full history: `git log -p | npx keyleak --stdin`
+- Latest N commits (e.g. 100): `git log -p -n 100 | npx keyleak --stdin`
+
 ## Inline ignore
 
 Add `keyleak:ignore` on a line to skip reporting secrets on that line (e.g. test fixtures).
