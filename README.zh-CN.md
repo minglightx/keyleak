@@ -4,7 +4,7 @@
 
 - **核心**：极简体积，零运行时依赖，两文件设计（一代码一规则）。TypeScript。
 - **速度**：规则预编译，默认排除 node_modules 等编译目录，可选按大小/文件名/后缀过滤。
-- **覆盖**：10,000+ 条特征，100+ 种密钥类型（AWS、GitHub、OpenAI、Stripe、DB URL、PII 等）。
+- **覆盖**：1000+ 条特征，100+ 种密钥类型（AWS、GitHub、OpenAI、Stripe、DB URL、PII 等）。
 - **精准**：关键词预过滤、熵阈值、行内 `keyleak:ignore`；可用 `--disable` 按 id 关闭规则。
 
 **运行**：`npx keyleak` · **输入**：stdin、文件或目录 · **输出**：text（默认）、JSON、CSV

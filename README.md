@@ -4,7 +4,7 @@
 
 - **Core**: Minimal footprint, zero runtime dependencies, two-file design (one code file, one rules file). TypeScript.
 - **Speed**: Precompiled rules, exclude dirs (e.g. `node_modules`) by default, optional filters (size, name, extension).
-- **Coverage**: 10,000+ patterns, 100+ secret types (AWS, GitHub, OpenAI, Stripe, DB URLs, PII, etc.).
+- **Coverage**: 1000+ patterns, 100+ secret types (AWS, GitHub, OpenAI, Stripe, DB URLs, PII, etc.).
 - **Precision**: Keyword pre-filter, entropy threshold, inline `keyleak:ignore`; use `--disable` to tune.
 
 **Run**: `npx keyleak` · **Input**: stdin, file, or directory · **Output**: text (default), JSON, or CSV

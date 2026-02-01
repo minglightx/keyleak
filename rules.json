@@ -1,10 +1,5 @@
 [
   {
-    "id": "aws-api-key",
-    "name": "AWS API Key",
-    "regex": "AKIA[0-9A-Z]{16}"
-  },
-  {
     "id": "aws-arn",
     "name": "AWS ARN",
     "regex": "arn:aws:[a-z0-9-]+:[a-z]{2}-[a-z]+-[0-9]+:[0-9]+:.+"
@@ -343,11 +338,6 @@
     "id": "aviationstack",
     "name": "Aviationstack",
     "regex": "(?:aviationstack).{0,40}\\b([a-z0-9]{32})\\b"
-  },
-  {
-    "id": "aws-1",
-    "name": "Aws - 1",
-    "regex": "\\b((?:AKIA|ABIA|ACCA|ASIA)[0-9A-Z]{16})\\b"
   },
   {
     "id": "axonaut",
@@ -4295,15 +4285,6 @@
     "regex": "github[_-]?api[_-]?key(=| =|:| :)"
   },
   {
-    "id": "github-oauth",
-    "name": "Discovered a GitHub OAuth Access Token, posing a risk of compromised GitHub account integrations and data leaks.",
-    "regex": "gho_[0-9a-zA-Z]{36}",
-    "entropy": 3,
-    "keywords": [
-      "gho_"
-    ]
-  },
-  {
     "id": "github-token",
     "name": "github_token",
     "regex": "github[_-]?token(=| =|:| :)"
@@ -4632,19 +4613,6 @@
     ]
   },
   {
-    "id": "aws-access-token",
-    "name": "Identified a pattern that may indicate AWS credentials, risking unauthorized cloud resource access and data breaches on AWS platforms.",
-    "regex": "\\b((?:A3T[A-Z0-9]|AKIA|ASIA|ABIA|ACCA)[A-Z2-7]{16})\\b",
-    "entropy": 3,
-    "keywords": [
-      "a3t",
-      "akia",
-      "asia",
-      "abia",
-      "acca"
-    ]
-  },
-  {
     "id": "aws-amazon-bedrock-api-key-long-lived",
     "name": "Identified a pattern that may indicate long-lived Amazon Bedrock API keys, risking unauthorized Amazon Bedrock usage",
     "regex": "\\b(ABSK[A-Za-z0-9+/]{109,269}={0,2})(?:[\\x60'\"\\s;]|\\\\[nr]|$)",
@@ -4698,14 +4666,6 @@
   {
     "id": "bittrex-access-key",
     "name": "Identified a Bittrex Access Key, which could lead to unauthorized access to cryptocurrency trading accounts and financial loss.",
-    "regex": "[\\w.-]{0,50}?(?:bittrex)(?:[ \\t\\w.-]{0,20})[\\s'\"]{0,3}(?:=|>|:{1,3}=|\\|\\||:|=>|\\?=|,)[\\x60'\"\\s=]{0,5}([a-z0-9]{32})(?:[\\x60'\"\\s;]|\\\\[nr]|$)",
-    "keywords": [
-      "bittrex"
-    ]
-  },
-  {
-    "id": "bittrex-secret-key",
-    "name": "Detected a Bittrex Secret Key, potentially compromising cryptocurrency transactions and financial security.",
     "regex": "[\\w.-]{0,50}?(?:bittrex)(?:[ \\t\\w.-]{0,20})[\\s'\"]{0,3}(?:=|>|:{1,3}=|\\|\\||:|=>|\\?=|,)[\\x60'\"\\s=]{0,5}([a-z0-9]{32})(?:[\\x60'\"\\s;]|\\\\[nr]|$)",
     "keywords": [
       "bittrex"
@@ -5143,15 +5103,6 @@
     "entropy": 3,
     "keywords": [
       "github_pat_"
-    ]
-  },
-  {
-    "id": "github-pat",
-    "name": "Uncovered a GitHub Personal Access Token, potentially leading to unauthorized repository access and sensitive content exposure.",
-    "regex": "ghp_[0-9a-zA-Z]{36}",
-    "entropy": 3,
-    "keywords": [
-      "ghp_"
     ]
   },
   {
@@ -6019,15 +5970,6 @@
     "entropy": 2,
     "keywords": [
       "shippo_"
-    ]
-  },
-  {
-    "id": "shopify-custom-access-token",
-    "name": "Detected a Shopify custom access token, potentially compromising custom app integrations and e-commerce data security.",
-    "regex": "shpca_[a-fA-F0-9]{32}",
-    "entropy": 2,
-    "keywords": [
-      "shpca_"
     ]
   },
   {
